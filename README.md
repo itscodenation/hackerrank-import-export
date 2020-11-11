@@ -1,8 +1,9 @@
-# How to Create HackerRank tests using this repo
+This App already works! But, we want to separate the different components into separate files.
 
-First, make sure you're on node version 8. HackerRank uses node 8 in their environment so using higher versions can easily break the tester.
-
-
-This repo is basically just a Create React app with some extra HackerRank config files. When students submit your test, hackerRank will basically run "npm test" and give them the results of that command. 
-
-You should create starter code with *failing* tests, and the students will edit the files (mostly `App.js`) to make the tests pass. If you're feeling extra generous you can also create a solution branch and push that up to github so that volunteers won't have to solve the challenges themselves :D. 
+1) Start in App.js.
+2) Move the Counter component to the file named for it.
+3) Make the Counter the component the default export from the file.
+4) Import the Counter component in this file
+5) Remove or comment out the Counter component function below.
+6) Do the same thing for the Button component.
+7) Run tests.
