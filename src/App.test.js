@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import DefaultExport from './DefaultExport';
-import App from 'App';
-import { FirstNamedComponent, SecondNamedComponent } from "./NamedExports";
+import App from './App';
+import Button from './Button';
+import Counter from './Counter';
 
 /**************************************************************************************************
  * Volunteers: add you tests here. They should be failing, but the students should be able to make
@@ -18,25 +18,9 @@ describe("The App", () => {
       </div>
     );
 
-    expect(getByText(/Default 1/i).textContent).toBe('Default 1');
-    expect(getByText(/Named Component 1/i).textContent).toBe('Named Component 1');
-    expect(getByText(/Named Component 2/i).textContent).toBe('Named Component 2');
+    expect(getByText(/Increment/i).textContent).toBe('Increment');
+    expect(getByText(/0/i).textContent).toBe('0');
   });
 });
 
-describe("The components", () => {
-  test('should render as expected', () => {
-    const { getByText } = render(
-      <div>
-        <DefaultExport />
-        <FirstNamedComponent />
-        <SecondNamedComponent />
-      </div>
-    );
-
-    expect(getByText(/Default 1/i).textContent).toBe('Default 1');
-    expect(getByText(/Named Component 1/i).textContent).toBe('Named Component 1');
-    expect(getByText(/Named Component 2/i).textContent).toBe('Named Component 2');
-  });
-});
 

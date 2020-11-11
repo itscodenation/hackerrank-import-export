@@ -1,30 +1,45 @@
-import React from "react";
-import DefaultComponent from './DefaultExport';
-import { FirstNamedComponent, SecondNamedComponent } from './NamedExports';
+import React, { useState } from "react";
 
-function DefaultComponent() {
+/**
+ * 1) Move the Counter component to the file named for it.
+ * 2) Make the Counter the component the default export from the file.
+ * 3) Import the Counter component in this file
+ * 4) Remove or comment out the Counter component function below.
+ * 5) Do the same thing for the Button component.
+ * 6) Run tests.
+ */
+
+function Counter(props) {
   return (
-    <div>Default 1</div>
+    <div>
+      {
+        props.count
+      }
+    </div>
   );
 }
 
-function FirstNamedComponent() {
+function Button(props) {
   return (
-    <div>Named Component 1</div>
-  );
-}
-
-function SecondNamedComponent() {
-  return (
-    <div>Named Component 2</div>
-  );
+    <button
+      onClick={props.handleClick}
+    >
+      Increment
+    </button>
+  )
 }
 
 const App = () => {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    const newCount = count + 1;
+
+    setCount(newCount);
+  }
   return (<div>
-    <DefaultComponent />
-    <FirstNamedComponent />
-    <SecondNamedComponent />
+    <Counter count={count} />
+    <Button handleClick={handleClick} />
   </div>);
 };
 
