@@ -10,6 +10,26 @@ import Counter from './Counter';
  * them pass by editing the other files.
  **************************************************************************************************/
 
+describe('The Button component', () => {
+  test('Should render a button with the text Increment', () => {
+    const { getByText } = render(
+      <Button />
+    );
+
+    expect(getByText(/Increment/i).textContent).toBe('Increment');
+  });
+});
+
+describe('The Counter component', () => {
+  test('Should start off rendering a count prop', () => {
+    const { getByText } = render(
+      <Counter count={0} />
+    );
+
+    expect(getByText(/0/i).textContent).toBe('0');
+  });
+});
+
 describe("The App", () => {
   test('Should render the 3 expected components', () => {
     const { getByText } = render(

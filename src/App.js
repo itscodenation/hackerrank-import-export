@@ -5,7 +5,7 @@ import React, { useState } from "react";
  * 2) Make the Counter the component the default export from the file.
  * 3) Import the Counter component in this file
  * 4) Remove or comment out the Counter component function below.
- * 5) Do the same thing for the Button component.
+ * 5) Repeat steps 1-4 for the Button component.
  * 6) Run tests.
  */
 
@@ -26,7 +26,7 @@ function Button(props) {
     >
       Increment
     </button>
-  )
+  );
 }
 
 const App = () => {
